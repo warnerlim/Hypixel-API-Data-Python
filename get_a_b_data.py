@@ -50,10 +50,9 @@ def retrieve_auction_data():
     
     return class_data
 
-def retrieve_bazaar_data(summary_type):
+def retrieve_bazaar_data(summary_type, input_item):
     data_retrieve = requests.get(url_base_bazaar)
     data = data_retrieve.json().get("products", {})
-    input_item = input("Enter item name here: ")
     success, item_instances = bazaar_items(data, input_item, summary_type)
     if success:
         return item_instances

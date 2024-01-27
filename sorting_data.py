@@ -13,9 +13,10 @@ def sort_by_price(class_objects_list, key_func = lambda x: x.price):
     key_func = key_func if callable(key_func) else lambda x: x.price
     return quicksort(class_objects_list, key_func)
 
+input_item_name = input("Enter item name for bazaar data here: ")
 sorted_auction_data = sort_by_price(retrieve_auction_data())
-sorted_insta_sell = sort_by_price(retrieve_bazaar_data("sell"))
-sorted_insta_buy = sort_by_price(retrieve_bazaar_data("buy"))
+sorted_insta_sell = sort_by_price(retrieve_bazaar_data("sell", input_item_name))
+sorted_insta_buy = sort_by_price(retrieve_bazaar_data("buy", input_item_name))
 page_of_items = 12
 average_price = 0.0
 
