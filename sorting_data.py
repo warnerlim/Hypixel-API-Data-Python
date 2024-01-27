@@ -13,9 +13,10 @@ def sort_by_price(class_objects_list, key_func = lambda x: x.price):
     key_func = key_func if callable(key_func) else lambda x: x.price
     return quicksort(class_objects_list, key_func)
 
+input_item_name = input("Enter item name for bazaar data here: ")
 sorted_auction_data = sort_by_price(retrieve_auction_data())
-sorted_insta_sell = sort_by_price(retrieve_bazaar_data("sell"))
-sorted_insta_buy = sort_by_price(retrieve_bazaar_data("buy"))
+sorted_insta_sell = sort_by_price(retrieve_bazaar_data("sell", input_item_name))
+sorted_insta_buy = sort_by_price(retrieve_bazaar_data("buy", input_item_name))
 page_of_items = 12
 average_price = 0.0
 
@@ -24,8 +25,8 @@ for i in range(1, page_of_items):
 
 print(*vars(sorted_auction_data[0]).values(), sep=', ') # Cheapest Auction item
 print(average_price) # Average price of auction item
-print(*vars(sorted_insta_sell[0]).values(), sep=', ') # Cheapest Bazaar Item to Instant Sell
-print(*vars(sorted_insta_buy[0]).values(), sep=', ') # Cheapest Bazaar Item to Instant Buy
+print("Instant Sell Price: ", *vars(sorted_insta_sell[0]).values(), sep=', ') # Cheapest Bazaar Item to Instant Sell
+print("Instant Buy Price: ", *vars(sorted_insta_buy[0]).values(), sep=', ') # Cheapest Bazaar Item to Instant Buy
 
 
 # Calculate how many heat cores are within the range of about 20% from the cheapest heat core

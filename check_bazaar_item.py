@@ -21,7 +21,7 @@ def bazaar_items(bazaar_item, input_item, summary_type):
     current_requirements = bazaar_requirements[input_item]
     item_data = bazaar_item[current_requirements["item_name"]]
 
-    entries = [bazaar_data(input_item, int(entry["pricePerUnit"]), float(entry["amount"]), int(entry["orders"])) 
+    entries = [bazaar_data(input_item, int(entry["pricePerUnit"]), int(entry["amount"]), int(entry["orders"])) 
                for entry in item_data[f"{summary_type}_summary"]]
 
     return True, entries
