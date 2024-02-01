@@ -25,8 +25,8 @@ for i in range(1, page_of_items):
 
 print(*vars(sorted_auction_data[0]).values(), sep=', ') # Cheapest Auction item
 print(average_price) # Average price of auction item
-print("Instant Sell Price: ", *vars(sorted_insta_sell[0]).values(), sep=', ') # Cheapest Bazaar Item to Instant Sell
-print("Instant Buy Price: ", *vars(sorted_insta_buy[0]).values(), sep=', ') # Cheapest Bazaar Item to Instant Buy
+print("sell", *vars(sorted_insta_sell[0]).values(), sep=', ') # Cheapest Bazaar Item to Instant Sell
+print("buy", *vars(sorted_insta_buy[0]).values(), sep=', ') # Cheapest Bazaar Item to Instant Buy
 
 
 # Calculate how many heat cores are within the range of about 20% from the cheapest heat core

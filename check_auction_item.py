@@ -37,7 +37,7 @@ def check_auction_item(auction_item):
             if(auction_item["starting_bid"] < auc_requirements[id]["price"]):
                 dashed_uuid = auction_item['uuid'][:8] + '-' + auction_item['uuid'][8:12] + '-' + auction_item['uuid'][12:16]
                 dashed_uuid += '-' + auction_item['uuid'][16:20] + '-' + auction_item['uuid'][20:]
-                return (True, (auction_item["item_name"], id, dashed_uuid, f"/viewauction {dashed_uuid}", auction_item['starting_bid']))
+                return (True, (auction_item["item_name"], dashed_uuid, f"/viewauction {dashed_uuid}", auction_item['starting_bid']))
    
     # Broke on one of the requirements
     return (False, "Not all requirements met")

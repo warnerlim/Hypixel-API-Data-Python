@@ -1,5 +1,6 @@
 from a_b_class import *
 bazaar_requirements = {
+    "E-Lava Bucket": {"item_name": "ENCHANTED_LAVA_BUCKET", "price_limit": 999999999},
     "Plasma Bucket": {"item_name": "PLASMA_BUCKET", "price_limit": 999999999},
     "Magma Bucket": {"item_name": "MAGMA_BUCKET", "price_limit": 999999999},
     "E-Coal Block": {"item_name": "ENCHANTED_COAL_BLOCK", "price_limit": 999999999},
@@ -10,7 +11,7 @@ bazaar_requirements = {
     "Booster Cookie": {"item_name": "BOOSTER_COOKIE", "price_limit": 999999999},
     "Hyper Catalyst": {"item_name": "HYPER_CATALYST", "price_limit": 999999999},
     "Catalyst": {"item_name": "CATALYST", "price_limit": 999999999},
-    "Crystal Fragments": {"item_name": "CRYSTAL_FRAGMENT", "price_limit": 999999999},
+    "Crystal Fragment": {"item_name": "CRYSTAL_FRAGMENT", "price_limit": 999999999},
     "ANOTHER_ITEM": {"item_name": "ANOTHER_ITEM", "price_limit": 999999999}
 }
 
