@@ -1,4 +1,4 @@
-from a_b_class import *
+from src.a_b_class import *
 bazaar_requirements = {
     "E-Lava Bucket": {"item_name": "ENCHANTED_LAVA_BUCKET", "price_limit": 999999999},
     "Plasma Bucket": {"item_name": "PLASMA_BUCKET", "price_limit": 999999999},

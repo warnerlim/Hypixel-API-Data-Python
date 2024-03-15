@@ -1,17 +1,11 @@
-import mysql.connector
-from get_a_b_data import *
+from src.get_a_b_data import *
+from mysql_db import *
 
-conn = mysql.connector.connect(
-    host="localhost",
-    username="root",
-    password="fb6g90(*du(OCHv7{:AEd9",
-    database="bitprices"
-)
 my_cursor = conn.cursor()
 
 def get_item_id(item_name):
     # Check if the item_name exists in ItemNames
-    my_cursor.execute('SELECT id FROM ItemNames WHERE item_name = %s', (item_name,))
+    my_cursor.execute(f"SELECT id FROM ItemNames WHERE item_name = '{item_name}'")
     result = my_cursor.fetchone()
 
     if result:
@@ -22,16 +16,16 @@ def insert_data_into_db(item_name, data):
     item_id = get_item_id(item_name)
 
     if data:
-            entry = data[0]  # Access the first element
-            if entry.summary == "buy":
-                summary_id = 1
-            elif entry.summary == "sell":
-                summary_id = 2
+        entry = data[0]  # Access the first element
+        if entry.summary == "buy":
+            summary_id = 1
+        elif entry.summary == "sell":
+            summary_id = 2
                 
-            my_cursor.execute('''
-                INSERT INTO Bazaar (item_id, price, amount, orders, type_id)
-                VALUES (%s, %s, %s, %s, %s)
-            ''', (item_id, entry.price, entry.amount, entry.orders, summary_id))
+        my_cursor.execute(f'''
+            INSERT INTO Bazaar (item_id, price, amount, orders, type_id)
+            VALUES ({item_id}, {entry.price}, {entry.amount}, {entry.orders}, {summary_id})
+        ''')
 
     conn.commit()
     

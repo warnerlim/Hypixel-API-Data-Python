@@ -8,14 +8,6 @@ print(retrieve_bazaar_data("sell"))
 print(retrieve_bazaar_data("buy"))
 
 
-
-
-
-
-
-
-
-
 # Average price of first 12 items in auction, use for future when doing cost analysis
 # page_of_items = 12
 # average_price = 0.0

@@ -1,11 +1,4 @@
-import mysql.connector
-
-conn = mysql.connector.connect(
-    host="localhost",
-    username="root",
-    password="fb6g90(*du(OCHv7{:AEd9",
-    database="bitprices"
-)
+from mysql_db import *
 
 my_cursor = conn.cursor()
 
